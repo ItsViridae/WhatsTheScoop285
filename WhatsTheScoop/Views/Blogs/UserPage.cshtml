@@ -1,0 +1,32 @@
+﻿@page
+@model WhatsTheScoop.Data.User
+@{
+}
+
+
+
+<h1>Users</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.UserId)</th>
+            <th>@Html.DisplayNameFor(m => m.FirstName)</th>
+            <th>@Html.DisplayNameFor(m => m.LastName)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var User in Model.Users)
+        {
+        <tr>
+            <td>@Html.DisplayFor(m => User.UserId)</td>
+            <td>@Html.DisplayFor(m => User.FirstName)</td>
+            <td>@Html.DisplayFor(m => User.LastName)</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+<button asp-page="New" class="btn btn-default">Create New User</button>
